@@ -7,7 +7,7 @@ use CodeEmailMKT\Infrastructure\Bootstrap;
 use Interop\Container\ContainerInterface;
 
 
-class BootstrapActionFactory
+class BootstrapMiddlewareFactory
 {
     public function __invoke(ContainerInterface $container)
     {

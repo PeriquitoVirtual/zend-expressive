@@ -1,7 +1,11 @@
 {%  extends '@layout/default.html.twig' %}
 {% block content %}
 {{ data }}
-    {% do minhaClasse.setName("luiz") %}
-    {{ minhaClasse.name }}
-    {{ constant('CodeEmailMKT\\Minhaclasse::MINHA_CONSTANTE') }}
+    {% for categoria in categorias %}
+        {{ categoria.name }}<br>
+    {% endfor %}
+
+{% endblock %}
+{% block title %}
+Página teste {{ parent() }}
 {% endblock %}

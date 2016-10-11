@@ -1,0 +1,11 @@
+{%  extends '@layout/default.html.twig' %}
+{% block content %}
+{{ data }}
+    {% for customer in customers %}
+        {{ customer.name }}<br>
+    {% endfor %}
+
+{% endblock %}
+{% block title %}
+Página teste {{ parent() }}
+{% endblock %}
