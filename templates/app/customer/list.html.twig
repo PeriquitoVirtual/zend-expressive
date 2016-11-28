@@ -1,11 +1,40 @@
 {%  extends '@layout/default.html.twig' %}
 {% block content %}
-{{ data }}
-    {% for customer in customers %}
-        {{ customer.name }}<br>
-    {% endfor %}
+    <div class="row">
+        <div class="box">
+            <div class="box-header">
+                <a href="{{ url('customer.create') }}" class="btn btn-app">
+                    <i class="fa fa-plus-circle"></i> Novo
+                </a>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th style="width: 10px;">#</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                        </tr>
+                        {% for customer in customers %}
+                            <tr>
+                                <td>{{ customer.id }}</td>
+                                <td>{{ customer.name }}</td>
+                                <td>{{ customer.email }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}
+
 {% block title %}
-Página teste {{ parent() }}
+Listagem de Contatos -  {{ parent() }}
 {% endblock %}
+ {% block page_header %}
+    Listagem de Contatos
+ {% endblock %}
