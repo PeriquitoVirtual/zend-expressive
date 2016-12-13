@@ -43,17 +43,17 @@ namespace CodeEmailMKT\Application\Action\Customer {
         {
 
 
-           $flash = $request->getAttribute('flash');
             $id = $request->getAttribute('id');
-            $customer = $this->repository->find($id);
+            $entity = $this->repository->find($id);
+
             if ($request->getMethod() == 'POST'){
+                $flash = $request->getAttribute('flash');
                 $data = $request->getParsedBody();
-                $entity = new Customer();
                 $entity->setName($data['name']);
                 $entity->setEmail($data['email']);
-                $this->repository->create($entity);
+                $this->repository->update($entity);
                 $flash = $request->getAttribute('flash');
-                $flash->setMessage('success', 'Contato cadastrado com sucesso');
+                $flash->setMessage('success', 'Contato atualizado com sucesso');
                 $uri = $this->router->generateUri('customer.list');
                 return new RedirectResponse($uri);
 
@@ -61,7 +61,7 @@ namespace CodeEmailMKT\Application\Action\Customer {
 
 
             return new HtmlResponse($this->template->render("app::customer/update",[
-                'customer' => $customer
+                'customer' => $entity
             ]));
 
 

@@ -12,14 +12,16 @@
                     <tbody>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th>Name</th>
+                            <th>Nome</th>
                             <th>E-mail</th>
+                            <th>Ações</th>
                         </tr>
                         {% for customer in customers %}
                             <tr>
                                 <td>{{ customer.id }}</td>
                                 <td>{{ customer.name }}</td>
                                 <td>{{ customer.email }}</td>
+                                <td><a href="{{ url('customer.update', {id: customer.id}) }}">Editar</a> </td>
                             </tr>
                         {% endfor %}
                     </tbody>

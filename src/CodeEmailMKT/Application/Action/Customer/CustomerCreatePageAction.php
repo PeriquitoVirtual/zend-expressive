@@ -43,6 +43,7 @@ namespace CodeEmailMKT\Application\Action\Customer {
         {
 
             if ($request->getMethod() == 'POST'){
+                $flash = $request->getAttribute('flash');
                 $data = $request->getParsedBody();
                 $entity = new Customer();
                 $entity->setName($data['name']);
