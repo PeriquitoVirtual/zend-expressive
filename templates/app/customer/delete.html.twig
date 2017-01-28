@@ -23,7 +23,7 @@
                         </fieldset>
                     </form>
 
-                    <form name="form" role="form" method="post" action="{{ url('customer.delete', {id: customer.id}) }}">
+                    <form name="form" role="form" method="post" action="{{ url('customer.delete',{id: customer.id}) }}">
                         <input type="hidden" class="form-control" name="_method" value="DELETE">
                         <div class="box-footer">
                             <button class="btn btn-danger" type="submit">Excluir</button>

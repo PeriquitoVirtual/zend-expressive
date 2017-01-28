@@ -13,7 +13,7 @@ return [
             Customer\CustomerListPageAction::class => Customer\Factory\CustomerListPageFactory::class,
             Customer\CustomerCreatePageAction::class => Customer\Factory\CustomerCreatePageFactory::class,
             Customer\CustomerUpdatePageAction::class => Customer\Factory\CustomerUpdatePageFactory::class,
-            Customer\CustomerUpdatePageAction::class => Customer\Factory\CustomerDeletePageFactory::class
+            Customer\CustomerDeletePageAction::class => Customer\Factory\CustomerDeletePageFactory::class
         ],
     ],
 
