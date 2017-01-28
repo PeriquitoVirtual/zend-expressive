@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Periquito
- * Date: 25/01/2017
- * Time: 00:07
- */
+
+return [
+    'debug' => true,
+    'config_cache_enabled' => false,
+];

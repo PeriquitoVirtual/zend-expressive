@@ -7,7 +7,8 @@
 
                     <form name="form" role="form">
                         <fieldset disabled>
-                            <input type="hidden" class="form-control" name="_method" value="PUT">
+
+
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="name">Nome:</label>
@@ -22,7 +23,8 @@
                         </fieldset>
                     </form>
 
-                    <form name="form" role="form" method="post" action="{{ url('customer.delete', {id: customer.ide}) }}">
+                    <form name="form" role="form" method="post" action="{{ url('customer.delete', {id: customer.id}) }}">
+                        <input type="hidden" class="form-control" name="_method" value="DELETE">
                         <div class="box-footer">
                             <button class="btn btn-danger" type="submit">Excluir</button>
                         </div>

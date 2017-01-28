@@ -46,7 +46,7 @@ namespace CodeEmailMKT\Application\Action\Customer {
             $id = $request->getAttribute('id');
             $entity = $this->repository->find($id);
 
-            if ($request->getMethod() == 'POST'){
+            if ($request->getMethod() == 'PUT'){
                 $flash = $request->getAttribute('flash');
                 $data = $request->getParsedBody();
                 $entity->setName($data['name']);
