@@ -1,7 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Periquito
- * Date: 03/02/2017
- * Time: 10:05
- */
+
+$forms = [
+    'dependencies' => [
+        'aliases' => [
+
+        ],
+       'invokables' => [
+        ],
+       'factories' => [
+        ],
+    ],
+    'view_helpers' => [
+        'aliases' => [
+
+        ],
+        'invokables' => [
+        ],
+        'factories' => [
+        ],
+    ]
+];
+
+$configProviderForm = (new \Zend\Form\ConfigProvider())->__invoke();
+
+return \Zend\Stdlib\ArrayUtils::merge($configProviderForm, $forms);
+
