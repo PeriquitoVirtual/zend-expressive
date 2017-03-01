@@ -10,25 +10,12 @@ use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 
-class CustomerRepositoryFactory implements FactoryInterface
+class CustomerRepositoryFactory
 {
-    /*public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container)
     {
         /** @var EntityManager $entityManager */
-       // $entityManager = $container->get(EntityManager::class);
-       // return $entityManager->getRepository(Customer::class);
-   // }*/
-
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
-    {
-        /** @var EntityManager $entityManager */
-        $entityManager = $serviceLocator->get(EntityManager::class);
+        $entityManager = $container->get(EntityManager::class);
         return $entityManager->getRepository(Customer::class);
     }
 }
